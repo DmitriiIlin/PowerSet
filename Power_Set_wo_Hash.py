@@ -93,17 +93,18 @@ class PowerSet():
         #Метод проверяет является ли множество параметр частью исходного множества.
         elements_A=self.slots
         elements_B=PowerSet_B.slots
-        elements_B_without_None=[]
-        result=False
+        count=0
         if elements_B==None:
             return None
         for i in range(0,len(elements_B)):
             if elements_B[i] in elements_A:
-                result=True
+                count+=1
             else:
-                result=False
-                break
-        return result
+                pass
+        if count==len(elements_B):
+            return True
+        else:
+            return False
 
 """a=PowerSet()
 a.put(23)
